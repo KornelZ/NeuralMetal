@@ -1,0 +1,43 @@
+from keras.layers import Dense, Dropout, LSTM, Activation
+from keras import Sequential, backend
+import tensorflow as tf
+
+
+class Model(object):
+
+    def __init__(self, use_gpu, num_gpu=1, num_cpu_cores=6):
+        if use_gpu:
+            config = tf.ConfigProto(device_count={
+                'GPU': num_gpu,
+                'CPU': num_cpu_cores})
+            session = tf.Session(config=config)
+            backend.set_session(session)
+
+        self.model = None
+
+    def init_model(self, input_shape, unique_size, model_size, dropout=0.2, activation="sigmoid",
+                   loss="categorical_crossentropy", optimizer="rmsprop"):
+        model = Sequential()
+        model.add(LSTM(
+            model_size,
+            input_shape=(input_shape[1], input_shape[2]),
+            return_sequences=True
+        ))
+        model.add(Dropout(dropout))
+        model.add(LSTM(model_size))
+        model.add(Dense(unique_size))
+        model.add(Activation(activation))
+        model.compile(
+            loss=loss,
+            optimizer=optimizer)
+        self.model = model
+
+    def train(self, data, labels, epochs, batch_size):
+            self.model.fit(
+                data,
+                labels,
+                epochs=epochs,
+                batch_size=batch_size)
+
+    def predict(self, pattern):
+        return self.model.predict(pattern)
