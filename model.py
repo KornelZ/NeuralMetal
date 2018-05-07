@@ -5,7 +5,7 @@ import tensorflow as tf
 
 class Model(object):
 
-    def __init__(self, use_gpu, num_gpu=1, num_cpu_cores=6):
+    def __init__(self, use_gpu, num_gpu=1, num_cpu_cores=4):
         if use_gpu:
             config = tf.ConfigProto(device_count={
                 'GPU': num_gpu,
