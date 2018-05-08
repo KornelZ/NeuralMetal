@@ -1,36 +1,42 @@
 import glob
 import numpy as np
-from music21 import converter, instrument, note, chord, stream
+from music21 import converter, instrument, note, chord
 from keras.utils import to_categorical
-import config
+from config import Config
 
 
-def get_notes():
+def parse_song(file, notes):
+    try:
+        m = converter.parse(file)
+        parts = instrument.partitionByInstrument(m)
+        if parts:
+            notes_to_parse = parts.parts[0].recurse()
+        else:
+            notes_to_parse = m.flat.notesAndRests
+
+        for element in notes_to_parse:
+            if isinstance(element, note.Note):
+                notes.append(str(element.pitch))
+                print(element.pitch)
+            elif isinstance(element, chord.Chord):
+                notes.append('.'.join(str(n) for n in element.normalOrder))
+                print(element)
+            elif isinstance(element, note.Rest):
+                notes.append(str(-1))
+                print("Rest")
+    except:
+        print("error")
+
+
+def get_notes(config):
     notes = []
-
+    songs = []
     for file in glob.glob(config.DATASET_PATH, recursive=True):
         print(file)
-        try:
-            m = converter.parse(file)
-            parts = instrument.partitionByInstrument(m)
-            if parts:
-                notes_to_parse = parts.parts[0].recurse()
-            else:
-                notes_to_parse = m.flat.notesAndRests
+        parse_song(file, notes)
+        songs.append(file)
 
-            for element in notes_to_parse:
-                if isinstance(element, note.Note):
-                    notes.append(str(element.pitch))
-                    print(element.pitch)
-                elif isinstance(element, chord.Chord):
-                    notes.append('.'.join(str(n) for n in element.normalOrder))
-                    print(element)
-                elif isinstance(element, note.Rest):
-                    notes.append(str(-1))
-                    print("Rest")
-        except:
-            print("error")
-    return notes
+    return notes, songs
 
 
 def prepare_input(notes, num_unique_notes, sequence_length):
@@ -58,31 +64,4 @@ def normalize(data, labels, sequence_length, num_unique_notes):
     return data, labels
 
 
-def to_file(output):
-    offset = 0
-    out_notes = []
 
-    for pattern in output:
-        if ('.' in pattern) or pattern.isdigit():
-            notes_in_chord = pattern.split('.')
-            notes = []
-            for n in notes_in_chord:
-                new_note = note.Note(int(n))
-                new_note.storedInstrument = instrument.AcousticGuitar()
-                notes.append(new_note)
-            new_chord = chord.Chord(notes)
-            new_chord.offset = offset
-            out_notes.append(new_chord)
-        else:
-            if pattern == "-1":
-                new_note = note.Rest()
-            else:
-                new_note = note.Note(pattern)
-            new_note.offset = offset
-            new_note.storedInstrument = instrument.AcousticGuitar()
-            out_notes.append(new_note)
-
-        offset += config.NOTE_OFFSET
-
-    midi_stream = stream.Stream(out_notes)
-    midi_stream.write('midi', fp=config.OUTPUT_PATH)

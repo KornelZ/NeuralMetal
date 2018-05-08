@@ -1,20 +1,30 @@
+import json_serializable
 
-TRAINING_PATTERN_LENGTH = 50
-TRAINING_EPOCHS = 40
-TRAINING_BATCH_SIZE = 16
-HIDDEN_LAYER_SIZE_MULTIPLIER = 2
-DROPOUT = 0.2
-ACTIVATION_FUNC = "sigmoid"
-LOSS_FUNC = "categorical_crossentropy"
-OPTIMIZER = "rmsprop"
 
-TEST_STARTING_INDEX = 0
-TEST_PATTERN_LENGTH = 400
-NOTE_OFFSET = 0.5
+class Config(json_serializable.JsonSerializable):
 
-GPUS = 1
-CPUS = 6
-USE_GPU = True
+    def __init__(self):
+        self.TRAINING_PATTERN_LENGTH = 50
+        self.TRAINING_EPOCHS = 60
+        self.TRAINING_BATCH_SIZE = 16
+        self.HIDDEN_LAYER_SIZE_MULTIPLIER = 2
+        self.DROPOUT = 0.2
+        self.ACTIVATION_FUNC = "sigmoid"
+        self.LOSS_FUNC = "categorical_crossentropy"
+        self.OPTIMIZER = "rmsprop"
 
-DATASET_PATH = "midi_songs/**/*.mid"
-OUTPUT_PATH = "output/output.mid"
+        self.TEST_STARTING_INDEX = 0
+        self.TEST_PATTERN_LENGTH = 400
+        self.NOTE_OFFSET = 0.5
+
+        self.GPUS = 1
+        self.CPUS = 6
+        self.USE_GPU = True
+
+        self.TRAINING_PATH = "models/"
+        self.DATASET_PATH = "midi_songs/**/*.mid"
+        self.OUTPUT_PATH = "output/"
+
+        self.IS_TRAINING = False
+        self.MODEL_PATH = self.TRAINING_PATH + "2018-05-08_21-12"
+        self.MODEL_INFO_PATH = self.MODEL_PATH + "_ModelInfo"

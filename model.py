@@ -1,6 +1,8 @@
 from keras.layers import Dense, Dropout, LSTM, Activation
 from keras import Sequential, backend
+from keras.models import load_model
 import tensorflow as tf
+import json_serializable
 
 
 class Model(object):
@@ -41,3 +43,20 @@ class Model(object):
 
     def predict(self, pattern):
         return self.model.predict(pattern)
+
+    def save(self, path):
+        self.model.save(path)
+
+    def load(self, path):
+        self.model = load_model(path)
+
+
+class ModelInfo(json_serializable.JsonSerializable):
+
+    def __init__(self, pitches, num_unique_notes, songs):
+        self.pitches = pitches
+        self.num_unique_notes = num_unique_notes
+        self.songs = songs
+
+
+
