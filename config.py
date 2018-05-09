@@ -19,7 +19,7 @@ class Config(json_serializable.JsonSerializable):
 
         self.GPUS = 1
         self.CPUS = 6
-        self.USE_GPU = True
+        self.USE_GPU = False
 
         self.TRAINING_PATH = "models/"
         self.DATASET_PATH = "midi_songs/**/*.mid"
@@ -28,3 +28,5 @@ class Config(json_serializable.JsonSerializable):
         self.IS_TRAINING = False
         self.MODEL_PATH = self.TRAINING_PATH + "2018-05-08_21-12"
         self.MODEL_INFO_PATH = self.MODEL_PATH + "_ModelInfo"
+
+        self.IS_MEASURE = True
