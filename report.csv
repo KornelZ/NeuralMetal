@@ -1,0 +1,17 @@
+source,target,% nut w sequence,levensteinh distance
+output\_Alice Cooper_Eighteen.1.mid,midi_songs\mario.MID,"(0.004524886877828055, 0.0)",203.0
+output\_Alice Cooper_Eighteen.1.mid,midi_songs\Alice Cooper\Eighteen.1.mid,"(0.004524886877828055, 0.007583682008368201)",184.0
+output\_Alice Cooper_Eighteen.1.mid,midi_songs\Alice Cooper\Poison.mid,"(0.004524886877828055, 0.026752767527675275)",191.0
+output\_Alice Cooper_Eighteen.1.mid,midi_songs\Alice Cooper\School's Out.1.mid,"(0.004524886877828055, 0.0)",212.0
+output\_Alice Cooper_Poison.mid,midi_songs\mario.MID,"(0.050761421319796954, 0.0)",390.0
+output\_Alice Cooper_Poison.mid,midi_songs\Alice Cooper\Eighteen.1.mid,"(0.050761421319796954, 0.007583682008368201)",365.0
+output\_Alice Cooper_Poison.mid,midi_songs\Alice Cooper\Poison.mid,"(0.050761421319796954, 0.026752767527675275)",248.0
+output\_Alice Cooper_Poison.mid,midi_songs\Alice Cooper\School's Out.1.mid,"(0.050761421319796954, 0.0)",367.0
+output\_Alice Cooper_School's Out.1.mid,midi_songs\mario.MID,"(0.009852216748768473, 0.0)",189.0
+output\_Alice Cooper_School's Out.1.mid,midi_songs\Alice Cooper\Eighteen.1.mid,"(0.009852216748768473, 0.007583682008368201)",171.0
+output\_Alice Cooper_School's Out.1.mid,midi_songs\Alice Cooper\Poison.mid,"(0.009852216748768473, 0.026752767527675275)",180.0
+output\_Alice Cooper_School's Out.1.mid,midi_songs\Alice Cooper\School's Out.1.mid,"(0.009852216748768473, 0.0)",194.0
+output\_mario.MID,midi_songs\mario.MID,"(0.009615384615384616, 0.0)",191.0
+output\_mario.MID,midi_songs\Alice Cooper\Eighteen.1.mid,"(0.009615384615384616, 0.007583682008368201)",174.0
+output\_mario.MID,midi_songs\Alice Cooper\Poison.mid,"(0.009615384615384616, 0.026752767527675275)",175.0
+output\_mario.MID,midi_songs\Alice Cooper\School's Out.1.mid,"(0.009615384615384616, 0.0)",197.0
