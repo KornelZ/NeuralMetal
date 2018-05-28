@@ -7,6 +7,7 @@ from music21 import note, instrument, stream, chord
 from StringDistance import StringDistance as Distance
 from SequenceMining import SequenceMining as Sequence
 import glob
+import reportgenerator
 
 def to_file(output, song, config):
     offset = 0
@@ -96,20 +97,8 @@ def train(config):
     config.serialize(path)
 
 def measure():
-    for file in glob.glob("midi_songs/Alice Cooper/Poison.mid", recursive=True):
-        targetf = file
-    for file in glob.glob("output/_Alice Cooper_Poison.mid", recursive=True):
-        sourcef = file
-    source = []
-    target = []
-    parse_song(sourcef, source)
-    parse_song(targetf, target)
-    seqcalc = Sequence(source, target)
-    result = seqcalc.calculate(3)
-    print(result)
-    calc = Distance(source, target)
-    result = calc.calculate()
-    print(result)
+    report = reportgenerator.Report()
+    report.generate_report()
 
 
 def main():

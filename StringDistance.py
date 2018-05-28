@@ -9,6 +9,7 @@ class StringDistance(object):
     def calculate(self):
         width = len(self.source)
         heigth = len(self.target)
+        sum = max(width, heigth)
         table = numpy.zeros((width, heigth))
         for i in range(width):
             for j in range(heigth):
@@ -19,4 +20,4 @@ class StringDistance(object):
                 left = table[i, j-1] + 1
                 diagonal = table[i-1, j-1] + cost
                 table[i, j] = min(above, left, diagonal)
-        return table[width -1][heigth -1]
+        return table[width -1][heigth -1]/sum
