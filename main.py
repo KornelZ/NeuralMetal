@@ -107,7 +107,7 @@ def measure(config):
 
 def generate_models(config):
     c = Config()
-    activations = ["softmax"]
+    activations = ["sigmoid", "softmax", "relu"]
     pattern_lens = [100, 200, 400]
     hidden_layer_sizes = [128, 256]
     epochs = [60, 120, 180]

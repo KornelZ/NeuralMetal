@@ -4,7 +4,7 @@ import json_serializable
 class Config(json_serializable.JsonSerializable):
 
     def __init__(self):
-        self.TRAINING_PATTERN_LENGTH = 100
+        self.TRAINING_PATTERN_LENGTH = 50
         self.TRAINING_EPOCHS = 60
         self.TRAINING_BATCH_SIZE = 16
         self.HIDDEN_LAYER_SIZE = 256
@@ -25,10 +25,10 @@ class Config(json_serializable.JsonSerializable):
         self.DATASET_PATH = "midi_songs/**/*.mid"
         self.OUTPUT_PATH = "output/"
 
-        self.IS_GENERATING = False
+        self.IS_GENERATING = True
         self.IS_TRAINING = False
         self.MODEL_NAME = "2018-05-29_22-59"
         self.MODEL_PATH = self.TRAINING_PATH + self.MODEL_NAME
         self.MODEL_INFO_PATH = self.MODEL_PATH + "_ModelInfo"
 
-        self.IS_MEASURE = True
+        self.IS_MEASURE = False

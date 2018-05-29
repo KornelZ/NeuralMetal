@@ -12,9 +12,9 @@ class Report(object):
         targetf = []
         sourcef = []
         for file in glob.glob("midi_songs/**/*.mid", recursive=True):
-            targetf.append(file)
-        for file in glob.glob("output/**/*.mid", recursive=True):
             sourcef.append(file)
+        for file in glob.glob("output/**/*.mid", recursive=True):
+            targetf.append(file)
         source = []
         target = []
         for i in range(len(sourcef)):
