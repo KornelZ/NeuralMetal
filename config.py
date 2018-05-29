@@ -18,7 +18,7 @@ class Config(json_serializable.JsonSerializable):
         self.NOTE_OFFSET = 0.5
 
         self.GPUS = 1
-        self.CPUS = 0
+        self.CPUS = 6
         self.USE_GPU = True
 
         self.TRAINING_PATH = "models/"
@@ -29,3 +29,5 @@ class Config(json_serializable.JsonSerializable):
         self.IS_TRAINING = False
         self.MODEL_PATH = self.TRAINING_PATH + "2018-05-29_22-59"
         self.MODEL_INFO_PATH = self.MODEL_PATH + "_ModelInfo"
+
+        self.IS_MEASURE = True

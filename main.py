@@ -4,7 +4,10 @@ from preprocess import get_notes, prepare_input, parse_song
 from config import Config
 import datetime
 from music21 import note, instrument, stream, chord
-
+from StringDistance import StringDistance as Distance
+from SequenceMining import SequenceMining as Sequence
+import glob
+import reportgenerator
 
 def to_file(output, song, config):
     offset = 0
@@ -99,32 +102,39 @@ def train(config):
     model.save(path)
     config.serialize(path)
 
+def measure():
+    report = reportgenerator.Report()
+    report.generate_report()
+
 
 def generate_models(config):
-    if config.IS_GENERATING and config.IS_TRAINING:
-        c = Config()
-        activations = ["softmax"]
-        pattern_lens = [100, 200, 400]
-        hidden_layer_sizes = [128, 256]
-        epochs = [60, 120, 180]
+    c = Config()
+    activations = ["softmax"]
+    pattern_lens = [100, 200, 400]
+    hidden_layer_sizes = [128, 256]
+    epochs = [60, 120, 180]
 
-        for ep in epochs:
-            for act in activations:
-                    for hidden in hidden_layer_sizes:
-                            c.ACTIVATION_FUNC = act
-                            c.HIDDEN_LAYER_SIZE = hidden
-                            c.TRAINING_EPOCHS = ep
-                            train(c)
+    for ep in epochs:
+        for act in activations:
+            for hidden in hidden_layer_sizes:
+                c.ACTIVATION_FUNC = act
+                c.HIDDEN_LAYER_SIZE = hidden
+                c.TRAINING_EPOCHS = ep
+                train(c)
 
 
 def main():
     config = Config()
-    generate_models(config)
-    if config.IS_TRAINING:
-        train(config)
+    if config.IS_GENERATING:
+        generate_models(config)
+    elif config.IS_MEASURE:
+        measure()
     else:
-        model_info = ModelInfo.deserialize(config.MODEL_INFO_PATH)
-        test(model_info, config)
+        if config.IS_TRAINING:
+            train(config)
+        else:
+            model_info = ModelInfo.deserialize(config.MODEL_INFO_PATH)
+            test(model_info, config)
 
 
 if __name__ == "__main__":

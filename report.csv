@@ -1,0 +1,19 @@
+source,target,procent nut w sekwencjach orginalu,,procent nut w sekwencjach nowego utworu,,levensteinh distance
+output\_Alice Cooper_Eighteen.1.mid,midi_songs\mario.MID,0.004524886877828055,,0.0,,0.13096774193548388
+output\_Alice Cooper_Eighteen.1.mid,midi_songs\Alice Cooper\Eighteen.1.mid,0.004524886877828055,,0.007583682008368201,,0.04811715481171548
+output\_Alice Cooper_Eighteen.1.mid,midi_songs\Alice Cooper\Poison.mid,0.004524886877828055,,0.026752767527675275,,0.17619926199261993
+output\_Alice Cooper_Eighteen.1.mid,midi_songs\Alice Cooper\School's Out.1.mid,0.004524886877828055,,0.0,,0.26044226044226043
+output\_Alice Cooper_Poison.mid,midi_songs\mario.MID,0.050761421319796954,,0.0,,0.25161290322580643
+output\_Alice Cooper_Poison.mid,midi_songs\Alice Cooper\Eighteen.1.mid,0.050761421319796954,,0.007583682008368201,,0.09544979079497908
+output\_Alice Cooper_Poison.mid,midi_songs\Alice Cooper\Poison.mid,0.050761421319796954,,0.026752767527675275,,0.22878228782287824
+output\_Alice Cooper_Poison.mid,midi_songs\Alice Cooper\School's Out.1.mid,0.050761421319796954,,0.0,,0.45085995085995084
+output\_Alice Cooper_School's Out.1.mid,midi_songs\mario.MID,0.009852216748768473,,0.0,,0.12193548387096774
+output\_Alice Cooper_School's Out.1.mid,midi_songs\Alice Cooper\Eighteen.1.mid,0.009852216748768473,,0.007583682008368201,,0.044717573221757324
+output\_Alice Cooper_School's Out.1.mid,midi_songs\Alice Cooper\Poison.mid,0.009852216748768473,,0.026752767527675275,,0.16605166051660517
+output\_Alice Cooper_School's Out.1.mid,midi_songs\Alice Cooper\School's Out.1.mid,0.009852216748768473,,0.0,,0.23832923832923833
+output\_mario.MID,midi_songs\mario.MID,0.009615384615384616,,0.0,,0.12322580645161291
+output\_mario.MID,midi_songs\Alice Cooper\Eighteen.1.mid,0.009615384615384616,,0.007583682008368201,,0.045502092050209206
+output\_mario.MID,midi_songs\Alice Cooper\Poison.mid,0.009615384615384616,,0.026752767527675275,,0.16143911439114392
+output\_mario.MID,midi_songs\Alice Cooper\School's Out.1.mid,0.009615384615384616,,0.0,,0.24201474201474202
+,sredni procent nut w sekwencjach orginalu,0.018688477390444526,sredni procent nut w sekwencjach nowego utworu,0.00858411238401087,sredni procent dystansu Levenshteina,0.17410294142074817
+,standardowe odchylenie procentu nut w sekwencjach orginalu,0.01863921634040003,standardowe odchylenie nowego utworu,0.010937034121604555,standardowe odchylenie dystansu Levenshteina,0.10140304047360423
