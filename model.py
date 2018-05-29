@@ -11,7 +11,7 @@ class Model(object):
         if use_gpu:
             config = tf.ConfigProto(device_count={
                 'GPU': num_gpu,
-                'CPU': num_cpu_cores})
+                })
             session = tf.Session(config=config)
             backend.set_session(session)
 

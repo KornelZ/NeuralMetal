@@ -11,6 +11,12 @@ def to_file(output, song, config):
     out_notes = []
 
     for pattern in output:
+        pattern_and_offset = pattern.split('_')
+        pattern = pattern_and_offset[0]
+        try:
+            offset_step = float(pattern_and_offset[1])
+        except:
+            offset_step = 0
         if ('.' in pattern) or pattern.isdigit():
             notes_in_chord = pattern.split('.')
             notes = []
@@ -30,7 +36,7 @@ def to_file(output, song, config):
             new_note.storedInstrument = instrument.AcousticGuitar()
             out_notes.append(new_note)
 
-        offset += config.NOTE_OFFSET
+        offset += offset_step
 
     midi_stream = stream.Stream(out_notes)
     path = config.OUTPUT_PATH + song[10:]
@@ -85,7 +91,7 @@ def get_training_path(config):
 def train(config):
     data, labels, model_info = preprocess(config.TRAINING_PATTERN_LENGTH, config)
     model = Model(config.USE_GPU, config.GPUS, config.CPUS)
-    model.init_model(data.shape, model_info.num_unique_notes, model_info.num_unique_notes * config.HIDDEN_LAYER_SIZE_MULTIPLIER,
+    model.init_model(data.shape, model_info.num_unique_notes, config.HIDDEN_LAYER_SIZE,
                      config.DROPOUT, config.ACTIVATION_FUNC, config.LOSS_FUNC, config.OPTIMIZER)
     model.train(data, labels, epochs=config.TRAINING_EPOCHS, batch_size=config.TRAINING_BATCH_SIZE)
     path = get_training_path(config)
@@ -94,8 +100,26 @@ def train(config):
     config.serialize(path)
 
 
+def generate_models(config):
+    if config.IS_GENERATING and config.IS_TRAINING:
+        c = Config()
+        activations = ["softmax"]
+        pattern_lens = [100, 200, 400]
+        hidden_layer_sizes = [128, 256]
+        epochs = [60, 120, 180]
+
+        for ep in epochs:
+            for act in activations:
+                    for hidden in hidden_layer_sizes:
+                            c.ACTIVATION_FUNC = act
+                            c.HIDDEN_LAYER_SIZE = hidden
+                            c.TRAINING_EPOCHS = ep
+                            train(c)
+
+
 def main():
     config = Config()
+    generate_models(config)
     if config.IS_TRAINING:
         train(config)
     else:

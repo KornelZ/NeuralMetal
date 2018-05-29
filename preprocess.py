@@ -2,7 +2,7 @@ import glob
 import numpy as np
 from music21 import converter, instrument, note, chord
 from keras.utils import to_categorical
-from config import Config
+from offset import limit_offset
 
 
 def parse_song(file, notes):
@@ -13,16 +13,19 @@ def parse_song(file, notes):
             notes_to_parse = parts.parts[0].recurse()
         else:
             notes_to_parse = m.flat.notesAndRests
-
+        prev_offset = 0
         for element in notes_to_parse:
+            offset = "_" + str(limit_offset(round(element.offset - prev_offset, 2)))
+            prev_offset = element.offset
+            print(offset)
             if isinstance(element, note.Note):
-                notes.append(str(element.pitch))
+                notes.append(str(element.pitch) + offset)
                 print(element.pitch)
             elif isinstance(element, chord.Chord):
-                notes.append('.'.join(str(n) for n in element.normalOrder))
+                notes.append('.'.join(str(n) for n in element.normalOrder) + offset)
                 print(element)
             elif isinstance(element, note.Rest):
-                notes.append(str(-1))
+                notes.append(str(-1) + offset)
                 print("Rest")
     except:
         print("error")
