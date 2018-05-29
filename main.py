@@ -4,10 +4,8 @@ from preprocess import get_notes, prepare_input, parse_song
 from config import Config
 import datetime
 from music21 import note, instrument, stream, chord
-from StringDistance import StringDistance as Distance
-from SequenceMining import SequenceMining as Sequence
-import glob
 import reportgenerator
+
 
 def to_file(output, song, config):
     offset = 0
@@ -102,9 +100,9 @@ def train(config):
     model.save(path)
     config.serialize(path)
 
-def measure():
+def measure(config):
     report = reportgenerator.Report()
-    report.generate_report()
+    report.generate_report(config)
 
 
 def generate_models(config):
@@ -128,7 +126,7 @@ def main():
     if config.IS_GENERATING:
         generate_models(config)
     elif config.IS_MEASURE:
-        measure()
+        measure(config)
     else:
         if config.IS_TRAINING:
             train(config)

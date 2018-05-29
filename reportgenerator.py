@@ -5,9 +5,10 @@ from StringDistance import StringDistance as Distance
 import numpy as np
 import csv
 
+
 class Report(object):
 
-    def generate_report(self):
+    def generate_report(self, config):
         targetf = []
         sourcef = []
         for file in glob.glob("midi_songs/**/*.mid", recursive=True):
@@ -25,7 +26,7 @@ class Report(object):
             parse_song(targetf[i], song)
             target.append(song)
 
-        with open("report.csv", "w") as f:
+        with open("reports/report_" + config.MODEL_NAME + ".csv", "w") as f:
             distances = []
             sqDistancesSrc = []
             sqDistancesTrg = []
@@ -34,7 +35,7 @@ class Report(object):
             for sourcefile, sourcepath in zip(source, sourcef):
                 for targetfile, targetpath in zip(target, targetf):
                     seqcalc = Sequence(sourcefile, targetfile)
-                    result = seqcalc.calculate(3)
+                    result = seqcalc.calculate()
                     print(result)
                     calc = Distance(sourcefile, targetfile)
                     distance = calc.calculate()

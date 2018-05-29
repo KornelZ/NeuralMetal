@@ -27,7 +27,8 @@ class Config(json_serializable.JsonSerializable):
 
         self.IS_GENERATING = False
         self.IS_TRAINING = False
-        self.MODEL_PATH = self.TRAINING_PATH + "2018-05-29_22-59"
+        self.MODEL_NAME = "2018-05-29_22-59"
+        self.MODEL_PATH = self.TRAINING_PATH + self.MODEL_NAME
         self.MODEL_INFO_PATH = self.MODEL_PATH + "_ModelInfo"
 
         self.IS_MEASURE = True

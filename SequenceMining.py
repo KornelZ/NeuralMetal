@@ -5,34 +5,31 @@ class SequenceMining(object):
     def __init__(self, source, target):
         self.source = source
         self.target = target
+        src = []
+        for i in range(0, len(source) - 8, 8):
+            src.append(source[i:i + 8])
         #relim_input_source = itemmining.get_relim_input(source)
-        self.sourcereport = seqmining.freq_seq_enum(source, min_support=2)
+        self.sourcereport = seqmining.freq_seq_enum(src, min_support=4)
+        trg = []
+        for i in range(0, len(target) - 8, 8):
+            trg.append(target[i:i + 8])
         #relim_input_target = itemmining.get_relim_input(target)
-        self.targetreport = seqmining.freq_seq_enum(target, min_support=2)
+        self.targetreport = seqmining.freq_seq_enum(trg, min_support=4)
+        print("")
 
-    def _count_sum(self, sample, report, depth):
+    def _count_sum(self, sample, report):
         sum = 0
-        for i in range(len(sample)):
-            value = []
-            depth = min(depth, len(sample) - i)
-            for j in range(depth):
-                value.append(sample[i + j].replace(".0", ""))
-            flag = False
-            for j in range(depth):
-                for key in report:
-                    if key[0] == tuple(value):
-                        sum = sum + len(value)
-                        i = i + len(value)
-                        flag = True
-                        break
-                if flag:
+        min_length = 4
+        for note in sample:
+            for sequence, _ in report:
+                if len(sequence) >= min_length and note in sequence:
+                    sum += 1
                     break
-                value = value[:-1]
         return sum
 
-    def calculate(self, depth):
-        sourcesum = self._count_sum(self.source, self.sourcereport, depth)
-        targetsum = self._count_sum(self.target, self.targetreport, depth)
+    def calculate(self):
+        sourcesum = self._count_sum(self.source, self.sourcereport)
+        targetsum = self._count_sum(self.target, self.targetreport)
         return sourcesum / len(self.source), targetsum / len(self.target)
 
 
