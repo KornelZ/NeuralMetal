@@ -116,6 +116,8 @@ def generate_models():
         for act in activations:
             for hidden in hidden_layer_sizes:
                 for lens in pattern_lens:
+                    print("epochs: {0}, pattern length: {1}, activation: {2}, hidden layer: {3}"
+                          .format(ep, lens, act, hidden))
                     c.ACTIVATION_FUNC = act
                     c.TRAINING_PATTERN_LENGTH = lens
                     c.HIDDEN_LAYER_SIZE = hidden

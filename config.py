@@ -22,6 +22,7 @@ class Config(json_serializable.JsonSerializable):
         self.OPTIMIZER = "rmsprop"
 
         self.TEST_STARTING_INDEX = 0
+        self.TEST_PATTERN_LENGTH = 400
 
         self.GPUS = 1
         self.CPUS = 6
@@ -35,4 +36,4 @@ class Config(json_serializable.JsonSerializable):
         self.MODEL_PATH = self.TRAINING_PATH + self.MODEL_NAME
         self.MODEL_INFO_PATH = self.MODEL_PATH + "_ModelInfo"
 
-        self.EXEC_MODE = Mode.TRAIN
+        self.EXEC_MODE = Mode.GENERATE_MODELS
