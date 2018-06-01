@@ -1,4 +1,12 @@
 import json_serializable
+from enum import Enum
+
+
+class Mode(Enum):
+    TRAIN = 0
+    TEST = 1
+    MEASURE = 2
+    GENERATE_MODELS = 3
 
 
 class Config(json_serializable.JsonSerializable):
@@ -14,8 +22,6 @@ class Config(json_serializable.JsonSerializable):
         self.OPTIMIZER = "rmsprop"
 
         self.TEST_STARTING_INDEX = 0
-        self.TEST_PATTERN_LENGTH = 400
-        self.NOTE_OFFSET = 0.5
 
         self.GPUS = 1
         self.CPUS = 6
@@ -25,10 +31,8 @@ class Config(json_serializable.JsonSerializable):
         self.DATASET_PATH = "midi_songs/**/*.mid"
         self.OUTPUT_PATH = "output/"
 
-        self.IS_GENERATING = True
-        self.IS_TRAINING = False
         self.MODEL_NAME = "2018-05-29_22-59"
         self.MODEL_PATH = self.TRAINING_PATH + self.MODEL_NAME
         self.MODEL_INFO_PATH = self.MODEL_PATH + "_ModelInfo"
 
-        self.IS_MEASURE = False
+        self.EXEC_MODE = Mode.TRAIN

@@ -1,7 +1,7 @@
 import numpy as np
 from model import Model, ModelInfo
 from preprocess import get_notes, prepare_input, parse_song
-from config import Config
+from config import Config, Mode
 import datetime
 from music21 import note, instrument, stream, chord
 import reportgenerator
@@ -105,34 +105,35 @@ def measure(config):
     report.generate_report(config)
 
 
-def generate_models(config):
+def generate_models():
     c = Config()
-    activations = ["sigmoid", "softmax", "relu"]
-    pattern_lens = [100, 200, 400]
-    hidden_layer_sizes = [128, 256]
+    activations = ["sigmoid", "softmax"]
+    pattern_lens = [25, 50, 75, 100]
+    hidden_layer_sizes = [64, 128, 256, 512]
     epochs = [60, 120, 180]
 
     for ep in epochs:
         for act in activations:
             for hidden in hidden_layer_sizes:
-                c.ACTIVATION_FUNC = act
-                c.HIDDEN_LAYER_SIZE = hidden
-                c.TRAINING_EPOCHS = ep
-                train(c)
+                for lens in pattern_lens:
+                    c.ACTIVATION_FUNC = act
+                    c.TRAINING_PATTERN_LENGTH = lens
+                    c.HIDDEN_LAYER_SIZE = hidden
+                    c.TRAINING_EPOCHS = ep
+                    train(c)
 
 
 def main():
     config = Config()
-    if config.IS_GENERATING:
-        generate_models(config)
-    elif config.IS_MEASURE:
+    if config.EXEC_MODE == Mode.TRAIN:
+        train(config)
+    elif config.EXEC_MODE == Mode.TEST:
+        model_info = ModelInfo.deserialize(config.MODEL_INFO_PATH)
+        test(model_info, config)
+    elif config.EXEC_MODE == Mode.MEASURE:
         measure(config)
-    else:
-        if config.IS_TRAINING:
-            train(config)
-        else:
-            model_info = ModelInfo.deserialize(config.MODEL_INFO_PATH)
-            test(model_info, config)
+    elif config.EXEC_MODE == Mode.GENERATE_MODELS:
+        generate_models()
 
 
 if __name__ == "__main__":
