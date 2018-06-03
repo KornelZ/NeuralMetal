@@ -1,10 +1,14 @@
 import json
 from types import SimpleNamespace as Namespace
+from enum import Enum
+
 
 class JsonSerializable:
 
     @staticmethod
     def json_default(object):
+        if isinstance(object, Enum):
+            return object.name
         return object.__dict__
 
     def serialize(self, path):

@@ -32,8 +32,8 @@ class Config(json_serializable.JsonSerializable):
         self.DATASET_PATH = "midi_songs/**/*.mid"
         self.OUTPUT_PATH = "output/"
 
-        self.MODEL_NAME = "2018-05-29_22-59"
+        self.MODEL_NAME = "2018-05-08_23-38"
         self.MODEL_PATH = self.TRAINING_PATH + self.MODEL_NAME
         self.MODEL_INFO_PATH = self.MODEL_PATH + "_ModelInfo"
 
-        self.EXEC_MODE = Mode.GENERATE_MODELS
+        self.EXEC_MODE = Mode.TEST
