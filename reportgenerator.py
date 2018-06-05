@@ -18,12 +18,11 @@ class Report(object):
         source = []
         target = []
         for i in range(len(sourcef)):
-            song = []
-            parse_song(sourcef[i], song)
+
+            _, song = parse_song(sourcef[i], config)
             source.append(song)
         for i in range(len(targetf)):
-            song = []
-            parse_song(targetf[i], song)
+            _, song = parse_song(targetf[i], config)
             target.append(song)
 
         with open("reports/report_" + config.MODEL_NAME + ".csv", "w") as f:

@@ -5,9 +5,16 @@ from config import Config, Mode
 import datetime
 from music21 import note, instrument, stream, chord
 import reportgenerator
+import sys
+
+def save_output(output, song, path):
+    midi_stream = stream.Stream(output)
+    path = path + song[10:]
+    path = path.replace("\\", "_")
+    midi_stream.write('midi', fp=path)
 
 
-def to_file(output, song, config):
+def to_file(output):
     offset = 0
     out_notes = []
 
@@ -38,11 +45,7 @@ def to_file(output, song, config):
             out_notes.append(new_note)
 
         offset += offset_step
-
-    midi_stream = stream.Stream(out_notes)
-    path = config.OUTPUT_PATH + song[10:]
-    path = path.replace("\\", "_")
-    midi_stream.write('midi', fp=path)
+    return out_notes
 
 
 def predict(data, pitches, num_unique_notes, model, config):
@@ -69,11 +72,11 @@ def test(model_info, config):
     model = Model(config.USE_GPU, config.GPUS, config.CPUS)
     model.load(config.MODEL_PATH)
     for song in model_info.songs:
-        n = []
-        parse_song(song, n)
-        data, _, _ = prepare_input(n, model_info.num_unique_notes, config.TRAINING_PATTERN_LENGTH)
+        sample, notes = parse_song(song, config)
+        data, _, _ = prepare_input(notes, model_info.num_unique_notes, config.TRAINING_PATTERN_LENGTH)
         output = predict(data, model_info.pitches, model_info.num_unique_notes, model, config)
-        to_file(output, song, config)
+        save_output(to_file(output), song, config.OUTPUT_PATH)
+        save_output(sample, song, config.SAMPLES_PATH)
 
 
 def preprocess(sequence_length, config):
@@ -127,10 +130,14 @@ def generate_models():
 
 def main():
     config = Config()
+    if len(sys.argv) == 2:
+        config.MODEL_NAME = sys.argv[1]
     if config.EXEC_MODE == Mode.TRAIN:
         train(config)
     elif config.EXEC_MODE == Mode.TEST:
         model_info = ModelInfo.deserialize(config.MODEL_INFO_PATH)
+        c = Config.deserialize(config.CONFIG_INFO_PATH)
+        config.TRAINING_PATTERN_LENGTH = c.TRAINING_PATTERN_LENGTH
         test(model_info, config)
     elif config.EXEC_MODE == Mode.MEASURE:
         measure(config)

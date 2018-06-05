@@ -37,6 +37,13 @@ class SequenceMining(object):
     def calculate(self):
         sourcesum = self._count_sum(self.source, self.sourcereport)
         targetsum = self._count_sum(self.target, self.targetreport)
-        return sourcesum / len(self.source), targetsum / len(self.target)
+
+        source_result = 0
+        target_result = 0
+        if len(self.source) != 0:
+            source_result = sourcesum / len(self.source)
+        if len(self.target) != 0:
+            target_result = targetsum / len(self.target)
+        return source_result, target_result
 
 

@@ -5,7 +5,9 @@ from keras.utils import to_categorical
 from offset import limit_offset
 
 
-def parse_song(file, notes):
+def parse_song(file, config):
+    sample = []
+    notes = []
     try:
         m = converter.parse(file)
         parts = instrument.partitionByInstrument(m)
@@ -19,16 +21,23 @@ def parse_song(file, notes):
             prev_offset = element.offset
             print(offset)
             if isinstance(element, note.Note):
+                sample.append(element)
                 notes.append(str(element.pitch) + offset)
                 print(element.pitch)
             elif isinstance(element, chord.Chord):
+                sample.append(element)
                 notes.append('.'.join(str(n) for n in element.normalOrder) + offset)
                 print(element)
             elif isinstance(element, note.Rest):
+                sample.append(element)
                 notes.append(str(-1) + offset)
                 print("Rest")
     except:
         print("error")
+    if len(sample) >= config.TRAINING_PATTERN_LENGTH:
+        return sample[:config.TRAINING_PATTERN_LENGTH], notes
+    else:
+        return None, notes
 
 
 def get_notes(config):
@@ -36,7 +45,8 @@ def get_notes(config):
     songs = []
     for file in glob.glob(config.DATASET_PATH, recursive=True):
         print(file)
-        parse_song(file, notes)
+        _, note_list = parse_song(file, config)
+        notes += note_list
         songs.append(file)
 
     return notes, songs
