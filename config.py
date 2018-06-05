@@ -33,7 +33,7 @@ class Config(json_serializable.JsonSerializable):
         self.OUTPUT_PATH = "output/"
         self.SAMPLES_PATH = "samples/"
 
-        self.MODEL_NAME = "2018-06-02_10-23"
+        self.MODEL_NAME = "2018-06-02_14-34"
         self.MODEL_PATH = self.TRAINING_PATH + self.MODEL_NAME
         self.MODEL_INFO_PATH = self.MODEL_PATH + "_ModelInfo"
         self.CONFIG_INFO_PATH = self.MODEL_PATH + "_Config"
