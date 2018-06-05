@@ -130,8 +130,17 @@ def generate_models():
 
 def main():
     config = Config()
-    if len(sys.argv) == 2:
+    if len(sys.argv) >= 2:
         config.MODEL_NAME = sys.argv[1]
+    if len(sys.argv) >= 3:
+        if sys.argv[2] == "train":
+            config.EXEC_MODE = Mode.TRAIN
+        elif sys.argv[2] == "test":
+            config.EXEC_MODE = Mode.TEST
+        elif sys.argv[2] == "measure":
+            config.EXEC_MODE = Mode.MEASURE
+        elif sys.argv[2] == "generate":
+            config.EXEC_MODE = Mode.GENERATE_MODELS
     if config.EXEC_MODE == Mode.TRAIN:
         train(config)
     elif config.EXEC_MODE == Mode.TEST:
