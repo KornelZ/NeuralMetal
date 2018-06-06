@@ -4,7 +4,8 @@ from music21 import converter, instrument, note, chord
 from keras.utils import to_categorical
 from offset import limit_offset
 
-"""Parses song creating sample source fragment and song consisting of notes, chords and breaks in music"""
+"""Parses song creating sample source fragment and song consisting of notes, chords and breaks in music
+offset is distance between each notes, the smaller the offset the faster the song"""
 def parse_song(file, config):
     sample = []
     notes = []

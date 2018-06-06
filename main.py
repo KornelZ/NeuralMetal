@@ -157,5 +157,14 @@ def main():
         generate_models()
 
 
+#Przykladowa egzekucja programu:
+#trening: python main.py _ train
+#generacja utworów: python main.py 2018-06-02_16-24 test
+#generacja raportów: python main.py 2018-06-02_16-24 measure
+#generacja wielu modeli: python main.py _ generate
+#pierwszy argument jest nazwą modelu z folderu models i jest wymagany dla komend test i measure
+#w przypadku komend train i generate należy podać _(lub inny niepusty string)
+# wywołanie: python main.py bez argumentów wywoła program zgodnie z konfiguracją w config.py
+
 if __name__ == "__main__":
     main()
