@@ -1,0 +1,124 @@
+source,target,procent nut w sekwencjach orginalu,,procent nut w sekwencjach nowego utworu,,levensteinh distance
+midi_songs\ABBA\Dancing Queen.mid,output\_ABBA_Dancing Queen.mid,0.11889596602972399,,0.9156626506024096,,0.6645435244161358
+midi_songs\ABBA\Dancing Queen.mid,output\_ACDC_Highway To Hell.mid,0.11889596602972399,,0.6779661016949152,,0.3630573248407643
+midi_songs\ABBA\Dancing Queen.mid,output\_Alice Cooper_Poison.mid,0.11889596602972399,,0.2794759825327511,,0.45222929936305734
+midi_songs\ABBA\Dancing Queen.mid,output\_Alice Cooper_School's Out.1.mid,0.11889596602972399,,0.7529411764705882,,0.3503184713375796
+midi_songs\ABBA\Dancing Queen.mid,output\_Bob Marley_I shot the Sheriff.mid,0.11889596602972399,,0.9664429530201343,,0.613588110403397
+midi_songs\ABBA\Dancing Queen.mid,output\_MC Hammer_Can't Touch This.mid,0.11889596602972399,,0.5898617511520737,,0.4288747346072187
+midi_songs\ABBA\Dancing Queen.mid,output\_Pink Floyd_Money.mid,0.11889596602972399,,0.9271523178807947,,0.6029723991507431
+midi_songs\ABBA\Dancing Queen.mid,output\_Rush_Spirit of Radio.mid,0.11889596602972399,,0.6428571428571429,,0.4416135881104034
+midi_songs\ABBA\Dancing Queen.mid,output\_Survivor_Eye Of The Tiger.mid,0.11889596602972399,,0.9129129129129129,,0.6666666666666666
+midi_songs\ABBA\Dancing Queen.mid,output\_The Beatles_Day Tripper.mid,0.11889596602972399,,0.9552238805970149,,0.42250530785562634
+midi_songs\ABBA\Dancing Queen.mid,output\_The Beatles_Twist And Shout.mid,0.11889596602972399,,0.96,,0.42250530785562634
+midi_songs\ACDC\Highway To Hell.mid,output\_ABBA_Dancing Queen.mid,0.16963064295485636,,0.9156626506024096,,0.21751025991792067
+midi_songs\ACDC\Highway To Hell.mid,output\_ACDC_Highway To Hell.mid,0.16963064295485636,,0.6779661016949152,,0.11833105335157319
+midi_songs\ACDC\Highway To Hell.mid,output\_Alice Cooper_Poison.mid,0.16963064295485636,,0.2794759825327511,,0.1491108071135431
+midi_songs\ACDC\Highway To Hell.mid,output\_Alice Cooper_School's Out.1.mid,0.16963064295485636,,0.7529411764705882,,0.11491108071135431
+midi_songs\ACDC\Highway To Hell.mid,output\_Bob Marley_I shot the Sheriff.mid,0.16963064295485636,,0.9664429530201343,,0.1997264021887825
+midi_songs\ACDC\Highway To Hell.mid,output\_MC Hammer_Can't Touch This.mid,0.16963064295485636,,0.5898617511520737,,0.1409028727770178
+midi_songs\ACDC\Highway To Hell.mid,output\_Pink Floyd_Money.mid,0.16963064295485636,,0.9271523178807947,,0.20041039671682626
+midi_songs\ACDC\Highway To Hell.mid,output\_Rush_Spirit of Radio.mid,0.16963064295485636,,0.6428571428571429,,0.14705882352941177
+midi_songs\ACDC\Highway To Hell.mid,output\_Survivor_Eye Of The Tiger.mid,0.16963064295485636,,0.9129129129129129,,0.2188782489740082
+midi_songs\ACDC\Highway To Hell.mid,output\_The Beatles_Day Tripper.mid,0.16963064295485636,,0.9552238805970149,,0.1354309165526676
+midi_songs\ACDC\Highway To Hell.mid,output\_The Beatles_Twist And Shout.mid,0.16963064295485636,,0.96,,0.1354309165526676
+midi_songs\Alice Cooper\Poison.mid,output\_ABBA_Dancing Queen.mid,0.3985239852398524,,0.9156626506024096,,0.3062730627306273
+midi_songs\Alice Cooper\Poison.mid,output\_ACDC_Highway To Hell.mid,0.3985239852398524,,0.6779661016949152,,0.16328413284132842
+midi_songs\Alice Cooper\Poison.mid,output\_Alice Cooper_Poison.mid,0.3985239852398524,,0.2794759825327511,,0.2029520295202952
+midi_songs\Alice Cooper\Poison.mid,output\_Alice Cooper_School's Out.1.mid,0.3985239852398524,,0.7529411764705882,,0.1559040590405904
+midi_songs\Alice Cooper\Poison.mid,output\_Bob Marley_I shot the Sheriff.mid,0.3985239852398524,,0.9664429530201343,,0.27490774907749077
+midi_songs\Alice Cooper\Poison.mid,output\_MC Hammer_Can't Touch This.mid,0.3985239852398524,,0.5898617511520737,,0.1937269372693727
+midi_songs\Alice Cooper\Poison.mid,output\_Pink Floyd_Money.mid,0.3985239852398524,,0.9271523178807947,,0.2785977859778598
+midi_songs\Alice Cooper\Poison.mid,output\_Rush_Spirit of Radio.mid,0.3985239852398524,,0.6428571428571429,,0.19833948339483395
+midi_songs\Alice Cooper\Poison.mid,output\_Survivor_Eye Of The Tiger.mid,0.3985239852398524,,0.9129129129129129,,0.30719557195571956
+midi_songs\Alice Cooper\Poison.mid,output\_The Beatles_Day Tripper.mid,0.3985239852398524,,0.9552238805970149,,0.18542435424354242
+midi_songs\Alice Cooper\Poison.mid,output\_The Beatles_Twist And Shout.mid,0.3985239852398524,,0.96,,0.18450184501845018
+midi_songs\Alice Cooper\School's Out.1.mid,output\_ABBA_Dancing Queen.mid,0.43243243243243246,,0.9156626506024096,,0.40663390663390664
+midi_songs\Alice Cooper\School's Out.1.mid,output\_ACDC_Highway To Hell.mid,0.43243243243243246,,0.6779661016949152,,0.21253071253071254
+midi_songs\Alice Cooper\School's Out.1.mid,output\_Alice Cooper_Poison.mid,0.43243243243243246,,0.2794759825327511,,0.2714987714987715
+midi_songs\Alice Cooper\School's Out.1.mid,output\_Alice Cooper_School's Out.1.mid,0.43243243243243246,,0.7529411764705882,,0.20393120393120392
+midi_songs\Alice Cooper\School's Out.1.mid,output\_Bob Marley_I shot the Sheriff.mid,0.43243243243243246,,0.9664429530201343,,0.36609336609336607
+midi_songs\Alice Cooper\School's Out.1.mid,output\_MC Hammer_Can't Touch This.mid,0.43243243243243246,,0.5898617511520737,,0.2628992628992629
+midi_songs\Alice Cooper\School's Out.1.mid,output\_Pink Floyd_Money.mid,0.43243243243243246,,0.9271523178807947,,0.36977886977886976
+midi_songs\Alice Cooper\School's Out.1.mid,output\_Rush_Spirit of Radio.mid,0.43243243243243246,,0.6428571428571429,,0.2678132678132678
+midi_songs\Alice Cooper\School's Out.1.mid,output\_Survivor_Eye Of The Tiger.mid,0.43243243243243246,,0.9129129129129129,,0.40663390663390664
+midi_songs\Alice Cooper\School's Out.1.mid,output\_The Beatles_Day Tripper.mid,0.43243243243243246,,0.9552238805970149,,0.2457002457002457
+midi_songs\Alice Cooper\School's Out.1.mid,output\_The Beatles_Twist And Shout.mid,0.43243243243243246,,0.96,,0.24447174447174447
+midi_songs\Bob Marley\I shot the Sheriff.mid,output\_ABBA_Dancing Queen.mid,0.6403574087862993,,0.9156626506024096,,0.12285927029039465
+midi_songs\Bob Marley\I shot the Sheriff.mid,output\_ACDC_Highway To Hell.mid,0.6403574087862993,,0.6779661016949152,,0.056962025316455694
+midi_songs\Bob Marley\I shot the Sheriff.mid,output\_Alice Cooper_Poison.mid,0.6403574087862993,,0.2794759825327511,,0.07967237527922562
+midi_songs\Bob Marley\I shot the Sheriff.mid,output\_Alice Cooper_School's Out.1.mid,0.6403574087862993,,0.7529411764705882,,0.05323901712583768
+midi_songs\Bob Marley\I shot the Sheriff.mid,output\_Bob Marley_I shot the Sheriff.mid,0.6403574087862993,,0.9664429530201343,,0.11094564408041697
+midi_songs\Bob Marley\I shot the Sheriff.mid,output\_MC Hammer_Can't Touch This.mid,0.6403574087862993,,0.5898617511520737,,0.07520476545048399
+midi_songs\Bob Marley\I shot the Sheriff.mid,output\_Pink Floyd_Money.mid,0.6403574087862993,,0.9271523178807947,,0.11206254653760238
+midi_songs\Bob Marley\I shot the Sheriff.mid,output\_Rush_Spirit of Radio.mid,0.6403574087862993,,0.6428571428571429,,0.0774385703648548
+midi_songs\Bob Marley\I shot the Sheriff.mid,output\_Survivor_Eye Of The Tiger.mid,0.6403574087862993,,0.9129129129129129,,0.12285927029039465
+midi_songs\Bob Marley\I shot the Sheriff.mid,output\_The Beatles_Day Tripper.mid,0.6403574087862993,,0.9552238805970149,,0.0748324646314222
+midi_songs\Bob Marley\I shot the Sheriff.mid,output\_The Beatles_Twist And Shout.mid,0.6403574087862993,,0.96,,0.07446016381236038
+midi_songs\MC Hammer\Can't Touch This.mid,output\_ABBA_Dancing Queen.mid,0.9712460063897763,,0.9156626506024096,,0.35250266240681577
+midi_songs\MC Hammer\Can't Touch This.mid,output\_ACDC_Highway To Hell.mid,0.9712460063897763,,0.6779661016949152,,0.18743343982960597
+midi_songs\MC Hammer\Can't Touch This.mid,output\_Alice Cooper_Poison.mid,0.9712460063897763,,0.2794759825327511,,0.2374866879659212
+midi_songs\MC Hammer\Can't Touch This.mid,output\_Alice Cooper_School's Out.1.mid,0.9712460063897763,,0.7529411764705882,,0.17891373801916932
+midi_songs\MC Hammer\Can't Touch This.mid,output\_Bob Marley_I shot the Sheriff.mid,0.9712460063897763,,0.9664429530201343,,0.31735889243876464
+midi_songs\MC Hammer\Can't Touch This.mid,output\_MC Hammer_Can't Touch This.mid,0.9712460063897763,,0.5898617511520737,,0.22896698615548455
+midi_songs\MC Hammer\Can't Touch This.mid,output\_Pink Floyd_Money.mid,0.9712460063897763,,0.9271523178807947,,0.32055378061767836
+midi_songs\MC Hammer\Can't Touch This.mid,output\_Rush_Spirit of Radio.mid,0.9712460063897763,,0.6428571428571429,,0.23322683706070288
+midi_songs\MC Hammer\Can't Touch This.mid,output\_Survivor_Eye Of The Tiger.mid,0.9712460063897763,,0.9129129129129129,,0.35250266240681577
+midi_songs\MC Hammer\Can't Touch This.mid,output\_The Beatles_Day Tripper.mid,0.9712460063897763,,0.9552238805970149,,0.21299254526091588
+midi_songs\MC Hammer\Can't Touch This.mid,output\_The Beatles_Twist And Shout.mid,0.9712460063897763,,0.96,,0.21192758253461128
+midi_songs\Pink Floyd\Money.mid,output\_ABBA_Dancing Queen.mid,0.47840531561461797,,0.9156626506024096,,0.10664451827242524
+midi_songs\Pink Floyd\Money.mid,output\_ACDC_Highway To Hell.mid,0.47840531561461797,,0.6779661016949152,,0.05647840531561462
+midi_songs\Pink Floyd\Money.mid,output\_Alice Cooper_Poison.mid,0.47840531561461797,,0.2794759825327511,,0.06777408637873754
+midi_songs\Pink Floyd\Money.mid,output\_Alice Cooper_School's Out.1.mid,0.47840531561461797,,0.7529411764705882,,0.05548172757475083
+midi_songs\Pink Floyd\Money.mid,output\_Bob Marley_I shot the Sheriff.mid,0.47840531561461797,,0.9664429530201343,,0.09833887043189368
+midi_songs\Pink Floyd\Money.mid,output\_MC Hammer_Can't Touch This.mid,0.47840531561461797,,0.5898617511520737,,0.06478405315614617
+midi_songs\Pink Floyd\Money.mid,output\_Pink Floyd_Money.mid,0.47840531561461797,,0.9271523178807947,,0.09700996677740864
+midi_songs\Pink Floyd\Money.mid,output\_Rush_Spirit of Radio.mid,0.47840531561461797,,0.6428571428571429,,0.06611295681063123
+midi_songs\Pink Floyd\Money.mid,output\_Survivor_Eye Of The Tiger.mid,0.47840531561461797,,0.9129129129129129,,0.10664451827242524
+midi_songs\Pink Floyd\Money.mid,output\_The Beatles_Day Tripper.mid,0.47840531561461797,,0.9552238805970149,,0.0664451827242525
+midi_songs\Pink Floyd\Money.mid,output\_The Beatles_Twist And Shout.mid,0.47840531561461797,,0.96,,0.06611295681063123
+midi_songs\Rush\Spirit of Radio.mid,output\_ABBA_Dancing Queen.mid,0.9079229122055674,,0.9156626506024096,,0.6766595289079229
+midi_songs\Rush\Spirit of Radio.mid,output\_ACDC_Highway To Hell.mid,0.9079229122055674,,0.6779661016949152,,0.37044967880085655
+midi_songs\Rush\Spirit of Radio.mid,output\_Alice Cooper_Poison.mid,0.9079229122055674,,0.2794759825327511,,0.42398286937901497
+midi_songs\Rush\Spirit of Radio.mid,output\_Alice Cooper_School's Out.1.mid,0.9079229122055674,,0.7529411764705882,,0.35974304068522484
+midi_songs\Rush\Spirit of Radio.mid,output\_Bob Marley_I shot the Sheriff.mid,0.9079229122055674,,0.9664429530201343,,0.563169164882227
+midi_songs\Rush\Spirit of Radio.mid,output\_MC Hammer_Can't Touch This.mid,0.9079229122055674,,0.5898617511520737,,0.37901498929336186
+midi_songs\Rush\Spirit of Radio.mid,output\_Pink Floyd_Money.mid,0.9079229122055674,,0.9271523178807947,,0.5674518201284796
+midi_songs\Rush\Spirit of Radio.mid,output\_Rush_Spirit of Radio.mid,0.9079229122055674,,0.6428571428571429,,0.39186295503211993
+midi_songs\Rush\Spirit of Radio.mid,output\_Survivor_Eye Of The Tiger.mid,0.9079229122055674,,0.9129129129129129,,0.6809421841541756
+midi_songs\Rush\Spirit of Radio.mid,output\_The Beatles_Day Tripper.mid,0.9079229122055674,,0.9552238805970149,,0.4282655246252677
+midi_songs\Rush\Spirit of Radio.mid,output\_The Beatles_Twist And Shout.mid,0.9079229122055674,,0.96,,0.4282655246252677
+midi_songs\Survivor\Eye Of The Tiger.mid,output\_ABBA_Dancing Queen.mid,0.10434782608695652,,0.9156626506024096,,0.7195652173913043
+midi_songs\Survivor\Eye Of The Tiger.mid,output\_ACDC_Highway To Hell.mid,0.10434782608695652,,0.6779661016949152,,0.3782608695652174
+midi_songs\Survivor\Eye Of The Tiger.mid,output\_Alice Cooper_Poison.mid,0.10434782608695652,,0.2794759825327511,,0.4826086956521739
+midi_songs\Survivor\Eye Of The Tiger.mid,output\_Alice Cooper_School's Out.1.mid,0.10434782608695652,,0.7529411764705882,,0.36086956521739133
+midi_songs\Survivor\Eye Of The Tiger.mid,output\_Bob Marley_I shot the Sheriff.mid,0.10434782608695652,,0.9664429530201343,,0.6478260869565218
+midi_songs\Survivor\Eye Of The Tiger.mid,output\_MC Hammer_Can't Touch This.mid,0.10434782608695652,,0.5898617511520737,,0.4608695652173913
+midi_songs\Survivor\Eye Of The Tiger.mid,output\_Pink Floyd_Money.mid,0.10434782608695652,,0.9271523178807947,,0.6543478260869565
+midi_songs\Survivor\Eye Of The Tiger.mid,output\_Rush_Spirit of Radio.mid,0.10434782608695652,,0.6428571428571429,,0.47608695652173916
+midi_songs\Survivor\Eye Of The Tiger.mid,output\_Survivor_Eye Of The Tiger.mid,0.10434782608695652,,0.9129129129129129,,0.7195652173913043
+midi_songs\Survivor\Eye Of The Tiger.mid,output\_The Beatles_Day Tripper.mid,0.10434782608695652,,0.9552238805970149,,0.43478260869565216
+midi_songs\Survivor\Eye Of The Tiger.mid,output\_The Beatles_Twist And Shout.mid,0.10434782608695652,,0.96,,0.4326086956521739
+midi_songs\The Beatles\Day Tripper.mid,output\_ABBA_Dancing Queen.mid,0.9273004575495679,,0.9156626506024096,,0.16573462125063548
+midi_songs\The Beatles\Day Tripper.mid,output\_ACDC_Highway To Hell.mid,0.9273004575495679,,0.6779661016949152,,0.08744280630401627
+midi_songs\The Beatles\Day Tripper.mid,output\_Alice Cooper_Poison.mid,0.9273004575495679,,0.2794759825327511,,0.10981189628876462
+midi_songs\The Beatles\Day Tripper.mid,output\_Alice Cooper_School's Out.1.mid,0.9273004575495679,,0.7529411764705882,,0.08439247585155059
+midi_songs\The Beatles\Day Tripper.mid,output\_Bob Marley_I shot the Sheriff.mid,0.9273004575495679,,0.9664429530201343,,0.15149974580579562
+midi_songs\The Beatles\Day Tripper.mid,output\_MC Hammer_Can't Touch This.mid,0.9273004575495679,,0.5898617511520737,,0.10574478901881038
+midi_songs\The Beatles\Day Tripper.mid,output\_Pink Floyd_Money.mid,0.9273004575495679,,0.9271523178807947,,0.15302491103202848
+midi_songs\The Beatles\Day Tripper.mid,output\_Rush_Spirit of Radio.mid,0.9273004575495679,,0.6428571428571429,,0.10828673106253177
+midi_songs\The Beatles\Day Tripper.mid,output\_Survivor_Eye Of The Tiger.mid,0.9273004575495679,,0.9129129129129129,,0.16573462125063548
+midi_songs\The Beatles\Day Tripper.mid,output\_The Beatles_Day Tripper.mid,0.9273004575495679,,0.9552238805970149,,0.10218607015760041
+midi_songs\The Beatles\Day Tripper.mid,output\_The Beatles_Twist And Shout.mid,0.9273004575495679,,0.96,,0.10167768174885612
+midi_songs\The Beatles\Twist And Shout.mid,output\_ABBA_Dancing Queen.mid,0.7563996696944674,,0.9156626506024096,,0.13583815028901733
+midi_songs\The Beatles\Twist And Shout.mid,output\_ACDC_Highway To Hell.mid,0.7563996696944674,,0.6779661016949152,,0.07060280759702725
+midi_songs\The Beatles\Twist And Shout.mid,output\_Alice Cooper_Poison.mid,0.7563996696944674,,0.2794759825327511,,0.08918249380677126
+midi_songs\The Beatles\Twist And Shout.mid,output\_Alice Cooper_School's Out.1.mid,0.7563996696944674,,0.7529411764705882,,0.0685383980181668
+midi_songs\The Beatles\Twist And Shout.mid,output\_Bob Marley_I shot the Sheriff.mid,0.7563996696944674,,0.9664429530201343,,0.1222130470685384
+midi_songs\The Beatles\Twist And Shout.mid,output\_MC Hammer_Can't Touch This.mid,0.7563996696944674,,0.5898617511520737,,0.08629232039636664
+midi_songs\The Beatles\Twist And Shout.mid,output\_Pink Floyd_Money.mid,0.7563996696944674,,0.9271523178807947,,0.12345169281585466
+midi_songs\The Beatles\Twist And Shout.mid,output\_Rush_Spirit of Radio.mid,0.7563996696944674,,0.6428571428571429,,0.08876961189099918
+midi_songs\The Beatles\Twist And Shout.mid,output\_Survivor_Eye Of The Tiger.mid,0.7563996696944674,,0.9129129129129129,,0.13625103220478943
+midi_songs\The Beatles\Twist And Shout.mid,output\_The Beatles_Day Tripper.mid,0.7563996696944674,,0.9552238805970149,,0.08257638315441784
+midi_songs\The Beatles\Twist And Shout.mid,output\_The Beatles_Twist And Shout.mid,0.7563996696944674,,0.96,,0.08216350123864574
+,sredni procent nut w sekwencjach orginalu,0.5368602384531017,sredni procent nut w sekwencjach nowego utworu,0.7800451699746125,sredni procent dystansu Levenshteina,0.2563678704591965
+,standardowe odchylenie procentu nut w sekwencjach orginalu,0.3115662855744907,standardowe odchylenie nowego utworu,0.2071925910837229,standardowe odchylenie dystansu Levenshteina,0.17878367302386308
