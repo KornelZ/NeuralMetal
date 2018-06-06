@@ -4,7 +4,7 @@ from music21 import converter, instrument, note, chord
 from keras.utils import to_categorical
 from offset import limit_offset
 
-
+"""Parses song creating sample source fragment and song consisting of notes, chords and breaks in music"""
 def parse_song(file, config):
     sample = []
     notes = []
@@ -39,7 +39,7 @@ def parse_song(file, config):
     else:
         return None, notes
 
-
+"""Parses all songs in dataset path and concatenates their notes"""
 def get_notes(config):
     notes = []
     songs = []
@@ -51,13 +51,13 @@ def get_notes(config):
 
     return notes, songs
 
-
+"""Returns prepared data table, target labels and sorted list of unique notes"""
 def prepare_input(notes, num_unique_notes, sequence_length):
     pitch_names = sorted(set(item for item in notes))
     note_to_int = dict((note, number) for number, note in enumerate(pitch_names))
     data = []
     labels = []
-
+    #input sequence is x notes and target is x + 1 note
     for i in range(0, len(notes) - sequence_length):
         seq_in = notes[i:i + sequence_length]
         seq_out = notes[i + sequence_length]
@@ -68,7 +68,7 @@ def prepare_input(notes, num_unique_notes, sequence_length):
 
     return data, labels, pitch_names
 
-
+"""Normalizes data values to [0, 1] range, resizes array to 2d arr, sets labels to one hot encoding"""
 def normalize(data, labels, sequence_length, num_unique_notes):
     n_patterns = len(data)
     data = np.reshape(data, (n_patterns, sequence_length, 1))

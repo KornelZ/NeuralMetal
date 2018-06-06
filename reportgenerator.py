@@ -7,7 +7,7 @@ import csv
 
 
 class Report(object):
-
+    """Create report in report directory"""
     def generate_report(self, config):
         targetf = []
         sourcef = []

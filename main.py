@@ -13,7 +13,7 @@ def save_output(output, song, path):
     path = path.replace("\\", "_")
     midi_stream.write('midi', fp=path)
 
-
+"""Transforms of list of strings representing the notes into a midi stream"""
 def to_file(output):
     offset = 0
     out_notes = []
@@ -47,8 +47,9 @@ def to_file(output):
         offset += offset_step
     return out_notes
 
-
+"""Returns generated song from source data fragment"""
 def predict(data, pitches, num_unique_notes, model, config):
+    #create dictionary of notes' indices and note values from given array of pitches
     int_to_note = dict((num, note) for num, note in enumerate(pitches))
     pattern = data[config.TEST_STARTING_INDEX]
     output = []
@@ -57,17 +58,18 @@ def predict(data, pitches, num_unique_notes, model, config):
         pred_in = np.reshape(pattern, (1, len(pattern), 1))
 
         prediction = model.predict(pred_in)
-
+        #choose note with highest probability
         index = np.argmax(prediction)
         result = int_to_note[index]
         output.append(result)
+        #append new note to pattern, normalize it and shift one to the right
         pattern = np.append(pattern, [[index / float(num_unique_notes)]], axis=0)
         pattern = pattern[1:len(pattern)]
 
     print(output)
     return output
 
-
+"""Generates new songs of based on model and source song, saves fragment of source song(sample) and output song"""
 def test(model_info, config):
     model = Model(config.USE_GPU, config.GPUS, config.CPUS)
     model.load(config.MODEL_PATH)
@@ -78,7 +80,7 @@ def test(model_info, config):
         save_output(to_file(output), song, config.OUTPUT_PATH)
         save_output(sample, song, config.SAMPLES_PATH)
 
-
+"""Creates data table of sequences of specifies length, target labels and info about model"""
 def preprocess(sequence_length, config):
     notes, songs = get_notes(config)
     num_unique_notes = len(set(notes))
@@ -91,7 +93,7 @@ def get_training_path(config):
     now = datetime.datetime.now()
     return config.TRAINING_PATH + now.strftime("%Y-%m-%d_%H-%M")
 
-
+"""Trains the model on songs from midi_songs and saves it and its config"""
 def train(config):
     data, labels, model_info = preprocess(config.TRAINING_PATTERN_LENGTH, config)
     model = Model(config.USE_GPU, config.GPUS, config.CPUS)
@@ -103,6 +105,7 @@ def train(config):
     model.save(path)
     config.serialize(path)
 
+"""Runs sequence mining algorithms on source songs and generated songs, and creates a report"""
 def measure(config):
     report = reportgenerator.Report()
     report.generate_report(config)

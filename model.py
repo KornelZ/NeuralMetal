@@ -17,9 +17,11 @@ class Model(object):
 
         self.model = None
 
+    """Creates neural network with given parameters"""
     def init_model(self, input_shape, unique_size, model_size, dropout=0.2, activation="sigmoid",
                    loss="categorical_crossentropy", optimizer="rmsprop"):
         model = Sequential()
+        #Return sequences to allow 2 stacked LSTMS
         model.add(LSTM(
             model_size,
             input_shape=(input_shape[1], input_shape[2]),
@@ -27,6 +29,7 @@ class Model(object):
         ))
         model.add(Dropout(dropout))
         model.add(LSTM(model_size))
+        #dense layer must have unique_size to classify all unique notes
         model.add(Dense(unique_size))
         model.add(Activation(activation))
         model.compile(
@@ -34,6 +37,7 @@ class Model(object):
             optimizer=optimizer)
         self.model = model
 
+    """Trains neural networks given data table and respective target labels"""
     def train(self, data, labels, epochs, batch_size):
             self.model.fit(
                 data,
@@ -41,6 +45,7 @@ class Model(object):
                 epochs=epochs,
                 batch_size=batch_size)
 
+    """Returns target label for given sequence of notes"""
     def predict(self, pattern):
         return self.model.predict(pattern)
 

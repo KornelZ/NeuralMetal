@@ -12,6 +12,7 @@ class Mode(Enum):
 class Config(json_serializable.JsonSerializable):
 
     def __init__(self):
+        #neural network configuration
         self.TRAINING_PATTERN_LENGTH = 50
         self.TRAINING_EPOCHS = 60
         self.TRAINING_BATCH_SIZE = 16
@@ -20,9 +21,9 @@ class Config(json_serializable.JsonSerializable):
         self.ACTIVATION_FUNC = "softmax"
         self.LOSS_FUNC = "categorical_crossentropy"
         self.OPTIMIZER = "rmsprop"
-
+        #output song configuration
         self.TEST_STARTING_INDEX = 0
-        self.TEST_PATTERN_LENGTH = 400
+        self.TEST_PATTERN_LENGTH = 400 #length of configuration
 
         self.GPUS = 1
         self.CPUS = 6
@@ -32,10 +33,10 @@ class Config(json_serializable.JsonSerializable):
         self.DATASET_PATH = "midi_songs/**/*.mid"
         self.OUTPUT_PATH = "output/"
         self.SAMPLES_PATH = "samples/"
-
+        #modify this string to change model (or use console)
         self.MODEL_NAME = "2018-06-02_16-24"
         self.MODEL_PATH = self.TRAINING_PATH + self.MODEL_NAME
         self.MODEL_INFO_PATH = self.MODEL_PATH + "_ModelInfo"
         self.CONFIG_INFO_PATH = self.MODEL_PATH + "_Config"
-
+        #possible modes TRAIN, TEST, MEASURE, GENERATE
         self.EXEC_MODE = Mode.TEST
